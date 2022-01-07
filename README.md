@@ -1,9 +1,6 @@
 # avro-example
 Apache avro serialization and deserialization example for generic and specific record in java
 
-# To generate  Avro classes for a given schema(eg:emp.avsc)
-Download avro-tools jar (avro-tools-1.8.2.jar) and execute the following command
-java -jar avro-tools-1.7.7.jar compile schema emp.avsc ./generatedavroclass
 
 # What is avro?
 Apache Avro is a language-neutral data serialization system which is used in big data ecosystem. The serialized data is stored in birary format
@@ -101,6 +98,15 @@ Given below is an example document using unions −
 Note : for union datatype if dafault value is setting , then it should be of first data type of union datatype
 
  {"name": "email", "type": ["null", "string"],"default": null} <br /> 
+
+# For serialization and deserialization of specific record we need to create avro generated class for the corresponding record accoding to the schema 
+
+# To generate  Avro classes for a given schema(eg:emp.avsc)
+
+Download avro-tools jar (avro-tools-1.8.2.jar) and execute the following command
+java -jar avro-tools-1.7.7.jar compile schema {schemapath} {generatedavroclasspath}
+Eg:
+java -jar avro-tools-1.7.7.jar compile schema emp.avsc ./generatedavroclass
 
 
 
